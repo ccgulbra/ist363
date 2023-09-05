@@ -4,15 +4,35 @@ h1, h2, h3, h4, h5, h6, p, body {
     font: inherit;
 }
 
+:root {
+    --starbucks-green: #006241;
+}
+
 body {
     background-color: yellow;
 }
 
 .overlay {
-    background-color: limegreen;
-    display: none;
+    background-color: var(--starbucks-green);
+    width: 100vw;
+    height: 100vh; /* v is for viewport */
+    position: fixed; /* fixed to the top edge of the browser */
+    top: 0;
+    left: -100vw;
+    z-index: 1000;
+    transition-property: all;
+    transition-duration: .5s;
 }
 
 .overlay.active {
-    display: block;
+    left: 0;
+}
+
+h1 {
+    font-size: 36px; 
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
 }
