@@ -1,11 +1,16 @@
-h1, h2, h3, h4, h5, h6, p, body {
+h1, h2, h3, h4, h5, h6, p, body, ul, li {
     margin: 0;
     padding: 0;
     font: inherit;
 }
 
+ul, li {
+    list-style: none; /* removes bullets */
+}
+
 :root {
     --starbucks-green: #006241;
+    --medium-gray: rgba(0,0,0,.58);
 }
 
 body {
@@ -20,10 +25,11 @@ body {
     top: 0;
     left: -100vw;
     z-index: 1000;
-    transition-property: all;
-    transition-duration: .5s;
+    transition-property: all; /* this is where the slider comes in - not in java */
+    transition-duration: .5s; 
 }
 
+/* compound selector */
 .overlay.active {
     left: 0;
 }
@@ -35,4 +41,44 @@ h1 {
 .logo {
     width: 100px;
     height: 100px;
+}
+
+.mobile-nav {
+   /*background-color: yellow;*/
+   padding: 1rem; /* rem=1xroot font size; accessibility */
+}
+
+.mobile-nav a {
+    font-family: Arial;
+    font-size: 1.1rem;
+    font-weight: bold; 
+    color: white; 
+    text-decoration: none;
+    display: block;  
+    padding: .5rem 1rem; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
+
+}
+
+.btn-ui {
+    background-color: white;
+    border: 0;
+    padding: 1rem;
+}
+
+.btn-ui svg {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--medium-gray);
+}
+
+#closeBtn { /*moves the X to the right of page */
+    position: absolute; 
+    top: 1rem; 
+    right: 1rem;
+    background-color: transparent; 
+    border: 1px solid white;
+}
+
+#closeBtn svg {
+    fill: white;
 }

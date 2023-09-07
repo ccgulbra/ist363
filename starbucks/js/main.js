@@ -26,6 +26,7 @@ menuBtn.addEventListener("click", function() {
     overlay.classList.add("active");
 }); // end of menuBtn click event
 
+// closeBtn and menuBtn are doing the same thing but in reverse //
 closeBtn.addEventListener("click", function() {
     overlay.classList.remove("active");
 }); //end of closeBtn click event
