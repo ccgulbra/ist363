@@ -2,6 +2,7 @@
 
 // variables, methods, and functions
 
+
 // 1. variables
 const myName = "Cc Gulbrandsen";
 //console.log(myName); //if there are "quotes" you are refering to variable
@@ -17,6 +18,10 @@ const introduction = `Hi, my name is ${myName}, I am ${myAge} years old and I li
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const overlay = document.getElementById("overlay");
+const coffeeList = document.getElementById("coffeeList");
+const ascendingBtn = document.getElementById("ascendingBtn")
+const descendingBtn = document.getElementById("descendingBtn")
+
 
 //console.log(menuBtn);
 
@@ -30,6 +35,27 @@ menuBtn.addEventListener("click", function() {
 closeBtn.addEventListener("click", function() {
     overlay.classList.remove("active");
 }); //end of closeBtn click event
+
+function purgeList() {
+    coffeeList.innerHTML = "";
+
+}
+function sortList(sortDirection) {
+    console.log({sortDirection});
+}
+
+ascendingBtn.addEventListener("click", function() {
+    console.log("ascending button has been clicked");
+    purgeList();
+    sortList("ascending");
+}); // end of ascendingBtn click event
+
+descendingBtn.addEventListener("click", function() {
+    console.log("descending button has been clicked");
+    purgeList();
+    sortList("descending");
+}); // end of descendingBtn click event
+
 
 // arrays and objects
 
@@ -100,13 +126,27 @@ coffeeObjHeadline.textContent = coffee.name;
 //console.log(coffees[2]);
 
 function buildTextElement(element, className, content) {
-    const newElement = docuument.createElement(element);
+    const newElement = document.createElement(element);
     newElement.classList.add(className);
     newElement.textContent = content;
     return newElement; 
 }
 
-coffees.forEach(function(coffee) {
+const sortedCoffees = [...coffees].sort(function(a,b){
+   //conditional statements - to order the coffees in particular way when sort function is active
+    if (a.title < b.title) { 
+        return -1;
+    }
+    if (a.title > b.title) {
+        return 1;
+    }
+    if (a.title === b.title) {
+        return 0;
+    }
+});
+//console.log({sortedCoffees});
+
+sortedCoffees.forEach(function(coffee) { //sorts all the coffees with sortedCoffees
     // 1. deconstruct the coffee object
     const { title, price, description, image } = coffee; 
 
@@ -146,5 +186,5 @@ coffees.forEach(function(coffee) {
     coffeeArticle.appendChild(coffeeDescription);
 
     // 4. append the article to the body
-    document.body.appendChild(coffeeArticle);
+    coffeeList.appendChild(coffeeArticle);
 }); // end of coffees forEach method
