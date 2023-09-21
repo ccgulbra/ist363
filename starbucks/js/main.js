@@ -116,7 +116,7 @@ coffees.forEach(function(coffee) {
 
     // referincing objects within the image array above
     const coffeeImage = document.createElement("img");
-   // coffeeImage.src = `images/${image.fileName}`; // dynamic name within hard code ``
+    coffeeImage.src = `images/${image.fileName}`; // dynamic name within hard code ``
     coffeeImage.width = image.width;
     coffeeImage.height = image.height;
     coffeeImage.alt = image.altText;
@@ -140,7 +140,7 @@ coffees.forEach(function(coffee) {
     coffeeDescription.textContent = description; 
 
     // 3. append the elements to the parent article
-    //coffeeArticle.appendChild(coffeeImage);
+    coffeeArticle.appendChild(coffeeImage);
     coffeeArticle.appendChild(coffeeTitle);
     coffeeArticle.appendChild(coffeePrice);
     coffeeArticle.appendChild(coffeeDescription);
