@@ -16,8 +16,19 @@
             <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
         </svg>
     </button>
+
     <button id="ascendingBtn">Ascending</button>
     <button id="descendingBtn">Descending</button>
+
+    <label for="priceRanges">Price Ranges</label>
+    <select name="priceRanges" id="priceRanges">
+        <option value="all">All</option>
+        <option value="2-3">$2-3</option>
+        <option value="3-4">$3-4</option>
+        <option value="4-5">$4-5</option>
+        <option value="5-6">$5-6</option>
+    </select>
+
     <div id="coffeeList"></div>
 
     <div class="overlay" id="overlay">
@@ -37,6 +48,7 @@
     </div>
     <script src="js/coffees.js"></script>
     <script src="js/coffeeApp.js"></script>
+    <!-- <script src="js/sandbox.js"></script> -->
     <!-- <script src="js/beatles.js"></script> -->
    <!-- <script src="js/main.js"></script> -->
 </body>

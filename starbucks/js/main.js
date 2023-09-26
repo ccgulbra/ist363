@@ -19,8 +19,8 @@ const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const overlay = document.getElementById("overlay");
 const coffeeList = document.getElementById("coffeeList");
-const ascendingBtn = document.getElementById("ascendingBtn")
-const descendingBtn = document.getElementById("descendingBtn")
+const ascendingBtn = document.getElementById("ascendingBtn");
+const descendingBtn = document.getElementById("descendingBtn");
 
 
 //console.log(menuBtn);
