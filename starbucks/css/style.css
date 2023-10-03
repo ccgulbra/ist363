@@ -1,158 +1,179 @@
+/* sass variables always start with $ */
 h1, h2, h3, h4, h5, h6, p, body, ul, li {
-    margin: 0;
-    padding: 0;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  font: inherit;
 }
 
 ul, li {
-    list-style: none; /* removes bullets */
+  list-style: none; /* removes bullets */
 }
 
 * {
-    box-sizing: border-box; /* invert padding on green layer */
+  box-sizing: border-box; /* invert padding on green layer */
 }
 
 :root {
-    --starbucks-green: #006241;
-    --medium-gray: rgba(0,0,0,.58);
+  --starbucks-green: #006241;
+  --medium-gray: rgba(0,0,0,.58);
 }
 
 body {
-    background-color: yellow;
+  background-color: #f94f1a;
+  font-family: Arial, Verdana, sans-serif;
 }
 
 .overlay {
-    background-color: var(--starbucks-green);
-    width: 100vw;
-    height: 100vh; /* v is for viewport */
-    position: fixed; /* fixed to the top edge of the browser */
-    top: 0;
-    left: -100vw;
-    z-index: 1000;
-    transition-property: all; /* this is where the slider comes in - not in java */
-    transition-duration: .5s; 
-    display: flex; /* display: flex makes items sit side by side instead of vertical */
-    flex-direction: column; 
-    justify-content: center; /* moves children to center of flex area */
-    padding: 2rem; 
+  background-color: var(--starbucks-green);
+  width: 100vw;
+  height: 100vh; /* v is for viewport */
+  position: fixed; /* fixed to the top edge of the browser */
+  top: 0;
+  left: -100vw;
+  z-index: 1000;
+  transition-property: all; /* this is where the slider comes in - not in java */
+  transition-duration: 0.5s;
+  display: flex; /* display: flex makes items sit side by side instead of vertical */
+  flex-direction: column;
+  justify-content: center; /* moves children to center of flex area */
+  padding: 2rem;
 }
 
 /* compound selector */
 .overlay.active {
-    left: 0;
+  left: 0;
 }
 
-h1 {
-    font-size: 36px; 
+header {
+  background-color: teal;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+header h1 {
+  font-size: 3rem;
+  color: white;
+  font-family: Georgia;
+}
+header .btn {
+  background-color: pink;
+  padding: 1rem;
+  border: 0;
+}
+header .btn:hover { /* &:hover is like writing button:hover to grab parent */
+  background-color: brown;
+}
+header .btn.active {
+  background-color: yellow;
 }
 
 .logo {
-    width: 8rem;
-    height: auto; /* auto makes aspect ratio same for width and height */
-    margin-bottom: 2rem;
-    position: relative; 
-    left: -1rem;
-    opacity: 0;
-    transition-property: all;
-    transition-delay: .25s;
-    transition-duration: .5s;
+  width: 8rem;
+  height: auto; /* auto makes aspect ratio same for width and height */
+  margin-bottom: 2rem;
+  position: relative;
+  left: -1rem;
+  opacity: 0;
+  transition-property: all;
+  transition-delay: 0.25s;
+  transition-duration: 0.5s;
 }
 
 .mobile-nav {
-   /*background-color: yellow;*/
-   /* padding: 1rem; /* rem=1xroot font size; accessibility */
+  /*background-color: yellow;*/
+  /* padding: 1rem; /* rem=1xroot font size; accessibility */
 }
 
 .mobile-nav a {
-    font-family: Arial;
-    font-size: 2rem;
-    font-weight: bold; 
-    color: white; 
-    text-decoration: none;
-    display: block;  
-    padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
-    
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
 }
 
 .overlay.active .logo {
-    left: 0;
-    opacity: 1;
+  left: 0;
+  opacity: 1;
 }
 
 .overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
-   /* background-color: red; */
-    opacity: 1;
-    left: 0;
+  /* background-color: red; */
+  opacity: 1;
+  left: 0;
 }
 
 .overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
-    transition-delay: .5s; 
+  transition-delay: 0.5s;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(2) { 
-    transition-delay: .6s;
+.overlay.active .mobile-nav ul li:nth-child(2) {
+  transition-delay: 0.6s;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(3) { 
-    transition-delay: .7s; 
+.overlay.active .mobile-nav ul li:nth-child(3) {
+  transition-delay: 0.7s;
 }
 
 .mobile-nav ul li {
-    left: -1rem; 
-    opacity: 0;
-    transition-property: all;
-    transition-duration: .5s;
+  left: -1rem;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
 }
 
 .btn-ui {
-    background-color: white;
-    border: 0;
-    padding: 1rem;
+  background-color: white;
+  border: 0;
+  padding: 1rem;
 }
 
 .btn-ui svg {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--medium-gray);
+  width: 3rem;
+  height: 3rem;
+  fill: var(--medium-gray);
 }
 
 #closeBtn { /*moves the X to the right of page */
-    position: absolute; 
-    top: 1rem; 
-    right: 1rem;
-    background-color: transparent; 
-    border: 1px solid white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
 }
 
 #closeBtn svg {
-    fill: white;
+  fill: white;
 }
 
 .coffee-item {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid gray; 
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
 }
 
 .coffee-title {
-    font-size: 2rem; 
-    font-weight: bold;
-    margin-bottom: .5rem; 
-    font-family: Arial; 
-    color: black; 
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: Arial;
+  color: black;
 }
 
 .coffee-price {
-    font-size: 1.25rem;
-    font-weight: normal;
-    margin-bottom: .5 rem;
-    font-family: Arial; 
-    color: grey;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 0.5 rem;
+  font-family: Arial;
+  color: grey;
 }
 
 .coffee-description {
-    font-size: 1rem;
-    font-weight: normal;
-    font-family: Arial; 
-    color: black;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: Arial;
+  color: black;
 }
+
+/*# sourceMappingURL=style.css.map */
