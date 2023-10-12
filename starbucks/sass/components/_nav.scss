@@ -1,0 +1,14 @@
+@use '../abstracts/mixins';
+
+.nav-desktop {
+    background-color: limegreen;
+    @include mixins.breakpoint(sm) {
+        background-color: red;
+    }
+    @include mixins.breakpoint(md) {
+        background-color: orange;
+    }
+    @include mixins.breakpoint(lg) {
+        background-color: violet;
+    }
+}

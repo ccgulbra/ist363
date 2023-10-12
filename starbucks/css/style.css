@@ -1,126 +1,310 @@
-/* sass variables always start with $ */
-h1, h2, h3, h4, h5, h6, p, body, ul, li {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-ul, li {
-  list-style: none; /* removes bullets */
-}
-
-* {
-  box-sizing: border-box; /* invert padding on green layer */
-}
-
-:root {
-  --starbucks-green: #006241;
-  --medium-gray: rgba(0,0,0,.58);
-}
-
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
 body {
-  background-color: #f94f1a;
-  font-family: Arial, Verdana, sans-serif;
+  margin: 0;
 }
 
-.overlay {
-  background-color: var(--starbucks-green);
-  width: 100vw;
-  height: 100vh; /* v is for viewport */
-  position: fixed; /* fixed to the top edge of the browser */
-  top: 0;
-  left: -100vw;
-  z-index: 1000;
-  transition-property: all; /* this is where the slider comes in - not in java */
-  transition-duration: 0.5s;
-  display: flex; /* display: flex makes items sit side by side instead of vertical */
-  flex-direction: column;
-  justify-content: center; /* moves children to center of flex area */
-  padding: 2rem;
-}
-
-/* compound selector */
-.overlay.active {
-  left: 0;
-}
-
-header {
-  background-color: teal;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-header h1 {
-  font-size: 3rem;
-  color: white;
-  font-family: Georgia;
-}
-header .btn {
-  background-color: pink;
-  padding: 1rem;
-  border: 0;
-}
-header .btn:hover { /* &:hover is like writing button:hover to grab parent */
-  background-color: brown;
-}
-header .btn.active {
-  background-color: yellow;
-}
-
-.logo {
-  width: 8rem;
-  height: auto; /* auto makes aspect ratio same for width and height */
-  margin-bottom: 2rem;
-  position: relative;
-  left: -1rem;
-  opacity: 0;
-  transition-property: all;
-  transition-delay: 0.25s;
-  transition-duration: 0.5s;
-}
-
-.mobile-nav {
-  /*background-color: yellow;*/
-  /* padding: 1rem; /* rem=1xroot font size; accessibility */
-}
-
-.mobile-nav a {
-  font-family: Arial;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
   display: block;
-  padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
 }
 
-.overlay.active .logo {
-  left: 0;
-  opacity: 1;
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
-.overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
-  /* background-color: red; */
-  opacity: 1;
-  left: 0;
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
-.overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
-  transition-delay: 0.5s;
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
-.overlay.active .mobile-nav ul li:nth-child(2) {
-  transition-delay: 0.6s;
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(3) {
-  transition-delay: 0.7s;
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
-.mobile-nav ul li {
-  left: -1rem;
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 0.5s;
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
 }
 
 .btn-ui {
@@ -174,6 +358,132 @@ header .btn.active {
   font-weight: normal;
   font-family: Arial;
   color: black;
+}
+
+.logo {
+  width: 5rem;
+  height: auto;
+}
+
+.overlay {
+  background-color: var(--starbucks-green);
+  width: 100vw;
+  height: 100vh; /* v is for viewport */
+  position: fixed; /* fixed to the top edge of the browser */
+  top: 0;
+  left: -100vw;
+  z-index: 1000;
+  transition-property: all; /* this is where the slider comes in - not in java */
+  transition-duration: 0.5s;
+  display: flex; /* display: flex makes items sit side by side instead of vertical */
+  flex-direction: column;
+  justify-content: center; /* moves children to center of flex area */
+  padding: 2rem;
+}
+.overlay .logo {
+  width: 8rem;
+  height: auto; /* auto makes aspect ratio same for width and height */
+  margin-bottom: 2rem;
+  position: relative;
+  left: -1rem;
+  opacity: 0;
+  transition-property: all;
+  transition-delay: 0.25s;
+  transition-duration: 0.5s;
+}
+
+/* compound selector */
+.overlay.active {
+  left: 0;
+}
+
+.mobile-nav {
+  /*background-color: yellow;*/
+  /* padding: 1rem; /* rem=1xroot font size; accessibility */
+}
+
+.mobile-nav a {
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
+}
+
+.overlay.active .logo {
+  left: 0;
+  opacity: 1;
+}
+
+.overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
+  /* background-color: red; */
+  opacity: 1;
+  left: 0;
+}
+
+.overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
+  transition-delay: 0.5s;
+}
+
+.overlay.active .mobile-nav ul li:nth-child(2) {
+  transition-delay: 0.6s;
+}
+
+.overlay.active .mobile-nav ul li:nth-child(3) {
+  transition-delay: 0.7s;
+}
+
+.mobile-nav ul li {
+  left: -1rem;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.nav-desktop {
+  background-color: limegreen;
+}
+@media (min-width: 700px) {
+  .nav-desktop {
+    background-color: red;
+  }
+}
+@media (min-width: 980px) {
+  .nav-desktop {
+    background-color: orange;
+  }
+}
+@media (min-width: 1140px) {
+  .nav-desktop {
+    background-color: violet;
+  }
+}
+
+/* sass variables always start with $ */
+h1, h2, h3, h4, h5, h6, p, body, ul, li {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul, li {
+  list-style: none; /* removes bullets */
+}
+
+* {
+  box-sizing: border-box; /* invert padding on green layer */
+}
+
+:root {
+  --starbucks-green: #006241;
+  --medium-gray: rgba(0,0,0,.58);
+}
+
+body {
+  background-color: #f94f1a;
+  font-family: Arial, Verdana, sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,80 @@
+
+.overlay {
+    background-color: var(--starbucks-green);
+    width: 100vw;
+    height: 100vh; /* v is for viewport */
+    position: fixed; /* fixed to the top edge of the browser */
+    top: 0;
+    left: -100vw;
+    z-index: 1000;
+    transition-property: all; /* this is where the slider comes in - not in java */
+    transition-duration: .5s; 
+    display: flex; /* display: flex makes items sit side by side instead of vertical */
+    flex-direction: column; 
+    justify-content: center; /* moves children to center of flex area */
+    padding: 2rem; 
+
+    .logo {
+        width: 8rem;
+        height: auto; /* auto makes aspect ratio same for width and height */
+        margin-bottom: 2rem;
+        position: relative; 
+        left: -1rem;
+        opacity: 0;
+        transition-property: all;
+        transition-delay: .25s;
+        transition-duration: .5s;
+    }
+}
+
+
+/* compound selector */
+.overlay.active {
+    left: 0;
+}
+
+.mobile-nav {
+    /*background-color: yellow;*/
+    /* padding: 1rem; /* rem=1xroot font size; accessibility */
+ }
+ 
+ .mobile-nav a {
+     font-family: Arial;
+     font-size: 2rem;
+     font-weight: bold; 
+     color: white; 
+     text-decoration: none;
+     display: block;  
+     padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
+     
+ }
+ 
+ .overlay.active .logo {
+     left: 0;
+     opacity: 1;
+ }
+ 
+ .overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
+    /* background-color: red; */
+     opacity: 1;
+     left: 0;
+ }
+ 
+ .overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
+     transition-delay: .5s; 
+ }
+ 
+ .overlay.active .mobile-nav ul li:nth-child(2) { 
+     transition-delay: .6s;
+ }
+ 
+ .overlay.active .mobile-nav ul li:nth-child(3) { 
+     transition-delay: .7s; 
+ }
+ 
+ .mobile-nav ul li {
+     left: -1rem; 
+     opacity: 0;
+     transition-property: all;
+     transition-duration: .5s;
+ }

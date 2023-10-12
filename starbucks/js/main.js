@@ -125,6 +125,9 @@ coffeeObjHeadline.textContent = coffee.name;
 // ];
 //console.log(coffees[2]);
 
+const beatles = ["Paul", "George", "Ringo", "John"];
+console.log({beatles});
+
 function buildTextElement(element, className, content) {
     const newElement = document.createElement(element);
     newElement.classList.add(className);

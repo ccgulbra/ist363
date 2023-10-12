@@ -118,5 +118,6 @@ priceRanges.addEventListener("change", (event) => {
     displayList(filteredCoffees);
 }); // end of price range conditional
 
+// 4. initalization
 const sortedStarterList = sortListByDirection(sortDirection, filteredCoffees);
 displayList(sortedStarterList);
