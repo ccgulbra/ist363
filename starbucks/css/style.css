@@ -307,6 +307,25 @@ template {
   display: none;
 }
 
+h1, h2, h3, h4, h5, h6, p, body, ul, li {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul, li {
+  list-style: none; /* removes bullets */
+}
+
+* {
+  box-sizing: border-box; /* invert padding */
+}
+
+body {
+  background-color: #f94f1a;
+  font-family: Arial, Verdana, sans-serif;
+}
+
 .btn-ui {
   background-color: white;
   border: 0;
@@ -329,6 +348,27 @@ template {
 
 #closeBtn svg {
   fill: white;
+}
+
+.container {
+  background-color: yellow;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 700px) {
+  .container {
+    width: 96%;
+  }
+}
+@media (min-width: 980px) {
+  .container {
+    width: 980px;
+  }
+}
+@media (min-width: 1140px) {
+  .container {
+    width: 1140px;
+  }
 }
 
 .coffee-item {
@@ -442,23 +482,45 @@ template {
   transition-duration: 0.5s;
 }
 
-.nav-desktop {
-  background-color: limegreen;
+.nav {
+  background-color: pink;
 }
-@media (min-width: 700px) {
-  .nav-desktop {
-    background-color: red;
-  }
+.nav.nav--desktop {
+  display: none;
 }
 @media (min-width: 980px) {
-  .nav-desktop {
-    background-color: orange;
+  .nav.nav--desktop {
+    display: block;
   }
 }
-@media (min-width: 1140px) {
-  .nav-desktop {
-    background-color: violet;
-  }
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav__item a {
+  font-family: arial;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.row.justify-content-space-between {
+  justify-content: space-between;
+}
+.row.align-items-center {
+  align-items: center;
+}
+
+header {
+  background-color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
 }
 
 /* sass variables always start with $ */

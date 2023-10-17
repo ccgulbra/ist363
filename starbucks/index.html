@@ -11,16 +11,32 @@
 
 <body>
     <header>
-        <img 
-            src="images/starbucks-logo.svg" 
-            alt="Starbucks logo" 
-            class="logo"
-        >
-        <nav class="nav-desktop">Desktop nav goes here.</nav>
-        <a href="">Find a store</a>
-        <a href="">Sign in</a>
-        <a href="">Join now</a>
-        <button class="btn-ui">Menu</button>
+        <div class="container">
+            <div class="row justify-content-space-between align-items-center">
+                <div class="row align-items-center">
+
+                <img 
+                    src="images/starbucks-logo.svg" 
+                    alt="Starbucks logo" 
+                    class="logo"
+                >
+                <nav class="nav nav--desktop">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="">Menu</a></li>
+                        <li class="nav__item"><a href="">Rewards</a></li>
+                        <li class="nav__item"><a href="">Gift cards</a></li>
+                    </ul>
+                </nav>
+            
+                </div>
+                <div class="row align-items-center">
+                <a href="">Find a store</a>
+                <a href="">Sign in</a>
+                <a href="">Join now</a>
+                <button class="btn-ui">Menu</button>
+            </div><!--/row-->
+        </div><!--/row-->
+    </div><!--/container -->
     </header>
 
     <button id="menuBtn" class="btn-ui">
