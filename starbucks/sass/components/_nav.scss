@@ -2,12 +2,7 @@
 
 .nav {
     background-color: pink;
-    &.nav--desktop {
-        display: none; 
-        @include mixins.breakpoint(laptop) {
-            display: block; 
-        }
-    }
+    
     &__list {
         display: flex;
         align-items: center;
@@ -20,5 +15,14 @@
             color: black; 
             text-decoration: none; 
         }
+    }
+    &.nav--desktop {
+        display: none; 
+        @include mixins.breakpoint(laptop) {
+            display: block; 
+        }
+    }
+    &.nav--footer {
+        background-color: red;
     }
 }
