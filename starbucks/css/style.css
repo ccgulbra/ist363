@@ -517,16 +517,13 @@ img {
   height: auto;
 }
 
-.nav {
-  background-color: pink;
-}
 .nav__list {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 .nav__link {
-  font-family: "SoDo Sans", Arial, sans-serif;
+  font-family: Arial;
   font-weight: bold;
   text-decoration: none;
 }
@@ -542,59 +539,8 @@ img {
     display: block;
   }
 }
-.nav.nav--ulility {
-  display: none;
-}
-@media (min-width: 980px) {
-  .nav.nav--ulility {
-    display: block;
-  }
-}
-.nav.nav--mobile .nav__lisst {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.nav.nav--mobile .nav__lisst .nav__link {
-  color: white;
-  font-size: 1.75rem;
-}
-.nav.nav--social {
-  margin-bottom: 1rem;
-}
-.nav.nav--social .nav__list {
-  justify-content: center;
-}
-@media (min-width: 980px) {
-  .nav.nav--social .nav__list {
-    justify-content: flex-start;
-  }
-}
 .nav.nav--social .nav__link {
-  background-color: white;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-}
-.nav.nav--social .nav__link svg {
-  fill: #006341;
-  width: auto;
-  height: 1.5rem;
-}
-.nav.nav--footer {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.nav.nav--footer .nav__list {
-  flex-direction: column;
-}
-@media (min-width: 980px) {
-  .nav.nav--footer .nav__list {
-    flex-direction: row;
-  }
+  color: white;
 }
 .nav.nav--footer .nav__link {
   color: white;
@@ -686,13 +632,13 @@ img {
 .showcase__text {
   background-color: black;
   color: white;
-  padding: 1.5;
+  padding: 1.5rem;
 }
 @media (min-width: 980px) {
   .showcase__text {
     position: absolute;
     bottom: 2rem;
-    top: 2rem;
+    left: 2rem;
     background-color: rgba(0, 0, 0, 0.6);
     width: 50%;
     border-left: 0.5rem solid #006341;

@@ -2,36 +2,36 @@
 @use '../abstracts/vars';
 
 .showcase {
-    margin-left: -1rem; 
-    margin-right: -1rem; 
-    position: relative; 
+    margin-left: -1rem;
+    margin-right: -1rem;
+    position: relative;
     @include mixins.breakpoint(laptop) {
-        margin-top: 3rem; 
+        margin-top: 3rem;
         margin-right: 0;
         margin-left: 0;
     }
     &__img {
         width: 100%;
-        height: auto; 
+        height: auto;
     }
     &__text {
         background-color: black;
-        color: white; 
-        padding: 1.5;
+        color: white;
+        padding: 1.5rem;
         @include mixins.breakpoint(laptop) {
-            position: absolute; 
-            bottom: 2rem; 
-            top: 2rem;
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
             background-color: rgba(0,0,0,.6);
             width: 50%;
-            border-left: .5rem solid vars.$color_green; 
+            border-left: .5rem solid vars.$color_green;
         }
     }
     &__title {
-        font-size: 2rem; 
-        font-weight: bold; 
+        font-size: 2rem;
+        font-weight: bold;
         font-family: vars.$font_primary;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
     }
     &__description {
         font-size: 1.25rem;
