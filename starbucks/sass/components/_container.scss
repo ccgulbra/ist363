@@ -1,9 +1,10 @@
 @use '../abstracts/mixins';
 
 .container {
-    background-color: yellow;
+    //background-color: yellow;
     width: 100%;
     margin: 0 auto;
+    padding: 1rem; 
     @include mixins.breakpoint(tablet) {
         width: 96%;
     }

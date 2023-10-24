@@ -1,0 +1,42 @@
+@use '../abstracts/mixins';
+@use '../abstracts/vars';
+
+.collection {
+   // background-color: yellow; 
+    margin-top: 2rem; 
+    &__title {
+        font-size: 1.5rem; 
+        font-weight: bold; 
+        color: black; 
+        font-family: vars.$font_primary; 
+
+    }
+    &__grid {
+        margin-top: 1rem; 
+        //background-color: pink;
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; 
+        @include mixins.breakpoint(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include mixins.breakpoint(laptop) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    &__item {
+        //background-color: orange; 
+        margin-bottom: 1rem; 
+        &__image {
+            width: 100%;
+            height: auto;
+            margin-bottom: .5rem;
+        }
+        &__title {
+            font-size: 1.25rem;
+            font-weight: bold; 
+            color: black;
+            font-family: vars.$font_primary;
+        }
+    }
+}

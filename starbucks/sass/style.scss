@@ -3,34 +3,6 @@
 @use "./components";
 @use "./regions";
 
-$color_primary: #f94f1a; /* sass variables always start with $ */
-$font_primary: Arial, Verdana, sans-serif;
-
-h1, h2, h3, h4, h5, h6, p, body, ul, li {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-}
-
-ul, li {
-    list-style: none; /* removes bullets */
-}
-
-* {
-    box-sizing: border-box; /* invert padding on green layer */
-}
-
-:root {
-    --starbucks-green: #006241;
-    --medium-gray: rgba(0,0,0,.58);
-}
-
-body {
-    background-color: $color_primary;
-    font-family: $font_primary;
-}
-
-
 
 
 

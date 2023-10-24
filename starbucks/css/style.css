@@ -307,6 +307,27 @@ template {
   display: none;
 }
 
+body {
+  background-color: white;
+  font-family: "SoDo Sans", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "SoDo Sans";
+  src: url("../fonts/SoDoSans-Bold.eot");
+  src: local("SoDo Sans Bold"), local("SoDoSans-Bold"), url("../fonts/SoDoSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/SoDoSans-Bold.woff2") format("woff2"), url("../fonts/SoDoSans-Bold.woff") format("woff"), url("../fonts/SoDoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SoDo Sans";
+  src: url("../fonts/SoDoSans-Regular.eot");
+  src: local("SoDo Sans Regular"), local("SoDoSans-Regular"), url("../fonts/SoDoSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/SoDoSans-Regular.woff2") format("woff2"), url("../fonts/SoDoSans-Regular.woff") format("woff"), url("../fonts/SoDoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 h1, h2, h3, h4, h5, h6, p, body, ul, li {
   margin: 0;
   padding: 0;
@@ -321,9 +342,8 @@ ul, li {
   box-sizing: border-box; /* invert padding */
 }
 
-body {
-  background-color: #f94f1a;
-  font-family: Arial, Verdana, sans-serif;
+img {
+  vertical-align: top; /* removes white space below image */
 }
 
 .btn-ui {
@@ -331,29 +351,74 @@ body {
   border: 0;
   padding: 1rem;
 }
-
 .btn-ui svg {
-  width: 3rem;
-  height: 3rem;
-  fill: var(--medium-gray);
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #006341;
 }
-
-#closeBtn { /*moves the X to the right of page */
+.btn-ui img {
+  width: 1.5rem;
+  height: auto;
+}
+@media (min-width: 980px) {
+  .btn-ui.btn-ui--menu {
+    display: none;
+  }
+}
+.btn-ui.btn-ui--close {
   position: absolute;
   top: 1rem;
   right: 1rem;
   background-color: transparent;
   border: 1px solid white;
 }
-
-#closeBtn svg {
+.btn-ui.btn-ui--close svg {
   fill: white;
 }
 
+.btn {
+  font-family: "SoDo Sans", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+.btn.btn--primary {
+  background-color: black;
+  color: white;
+}
+.btn.btn--secondary {
+  background-color: white;
+  color: black;
+}
+.btn.btn--text {
+  border-radius: 0;
+  border: 0;
+}
+.btn.btn-icon--left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn.btn-icon--left svg {
+  width: 1rem;
+  height: auto;
+}
+.btn.btn-icon--left.btn--icon--left {
+  flex-direction: row-reverse;
+}
+.btn.btn-icon--left.btn--icon--right {
+  flex-direction: row;
+}
+
 .container {
-  background-color: yellow;
   width: 100%;
   margin: 0 auto;
+  padding: 1rem;
 }
 @media (min-width: 700px) {
   .container {
@@ -400,13 +465,143 @@ body {
   color: black;
 }
 
+.collection {
+  margin-top: 2rem;
+}
+.collection__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  font-family: "SoDo Sans", Arial, sans-serif;
+}
+.collection__grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media (min-width: 700px) {
+  .collection__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 980px) {
+  .collection__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.collection__item {
+  margin-bottom: 1rem;
+}
+.collection__item__image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.collection__item__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: black;
+  font-family: "SoDo Sans", Arial, sans-serif;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: black;
+}
+
 .logo {
   width: 5rem;
   height: auto;
 }
 
+.nav {
+  background-color: pink;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav__link {
+  font-family: "SoDo Sans", Arial, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav.nav--desktop {
+  display: none;
+}
+.nav.nav--desktop .nav__link {
+  color: black;
+  text-transform: uppercase;
+}
+@media (min-width: 980px) {
+  .nav.nav--desktop {
+    display: block;
+  }
+}
+.nav.nav--ulility {
+  display: none;
+}
+@media (min-width: 980px) {
+  .nav.nav--ulility {
+    display: block;
+  }
+}
+.nav.nav--mobile .nav__lisst {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.nav.nav--mobile .nav__lisst .nav__link {
+  color: white;
+  font-size: 1.75rem;
+}
+.nav.nav--social {
+  margin-bottom: 1rem;
+}
+.nav.nav--social .nav__list {
+  justify-content: center;
+}
+@media (min-width: 980px) {
+  .nav.nav--social .nav__list {
+    justify-content: flex-start;
+  }
+}
+.nav.nav--social .nav__link {
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+}
+.nav.nav--social .nav__link svg {
+  fill: #006341;
+  width: auto;
+  height: 1.5rem;
+}
+.nav.nav--footer {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.nav.nav--footer .nav__list {
+  flex-direction: column;
+}
+@media (min-width: 980px) {
+  .nav.nav--footer .nav__list {
+    flex-direction: row;
+  }
+}
+.nav.nav--footer .nav__link {
+  color: white;
+}
+
 .overlay {
-  background-color: var(--starbucks-green);
+  background-color: #006341;
   width: 100vw;
   height: 100vh; /* v is for viewport */
   position: fixed; /* fixed to the top edge of the browser */
@@ -419,6 +614,7 @@ body {
   flex-direction: column;
   justify-content: center; /* moves children to center of flex area */
   padding: 2rem;
+  align-items: center;
 }
 .overlay .logo {
   width: 8rem;
@@ -435,26 +631,6 @@ body {
 /* compound selector */
 .overlay.active {
   left: 0;
-}
-
-.mobile-nav {
-  /*background-color: yellow;*/
-  /* padding: 1rem; /* rem=1xroot font size; accessibility */
-}
-
-.mobile-nav a {
-  font-family: Arial;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 1rem 0; /* first is top/bottom, second is left/right; padding is best for click target on sites instead of margin */
-}
-
-.overlay.active .logo {
-  left: 0;
-  opacity: 1;
 }
 
 .overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
@@ -475,37 +651,9 @@ body {
   transition-delay: 0.7s;
 }
 
-.mobile-nav ul li {
-  left: -1rem;
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 0.5s;
-}
-
-.nav {
-  background-color: pink;
-}
-.nav__list {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.nav__item a {
-  font-family: arial;
-  font-weight: bold;
-  color: black;
-  text-decoration: none;
-}
-.nav.nav--desktop {
-  display: none;
-}
-@media (min-width: 980px) {
-  .nav.nav--desktop {
-    display: block;
-  }
-}
-.nav.nav--footer {
-  background-color: red;
+.overlay.active .logo {
+  left: 0;
+  opacity: 1;
 }
 
 .row {
@@ -519,6 +667,53 @@ body {
   align-items: center;
 }
 
+.showcase {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  position: relative;
+}
+@media (min-width: 980px) {
+  .showcase {
+    margin-top: 3rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.showcase__img {
+  width: 100%;
+  height: auto;
+}
+.showcase__text {
+  background-color: black;
+  color: white;
+  padding: 1.5;
+}
+@media (min-width: 980px) {
+  .showcase__text {
+    position: absolute;
+    bottom: 2rem;
+    top: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50%;
+    border-left: 0.5rem solid #006341;
+  }
+}
+.showcase__title {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "SoDo Sans", Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+.showcase__description {
+  font-size: 1.25rem;
+  font-family: "SoDo Sans", Arial, sans-serif;
+}
+
+.select {
+  width: 6rem;
+  padding: 1rem;
+}
+
 header {
   background-color: white;
   padding-top: 1rem;
@@ -526,29 +721,16 @@ header {
   border-bottom: 1px solid grey;
 }
 
-/* sass variables always start with $ */
-h1, h2, h3, h4, h5, h6, p, body, ul, li {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+footer {
+  background-color: #006341;
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
 }
-
-ul, li {
-  list-style: none; /* removes bullets */
-}
-
-* {
-  box-sizing: border-box; /* invert padding on green layer */
-}
-
-:root {
-  --starbucks-green: #006241;
-  --medium-gray: rgba(0,0,0,.58);
-}
-
-body {
-  background-color: #f94f1a;
-  font-family: Arial, Verdana, sans-serif;
+@media (min-width: 980px) {
+  footer {
+    text-align: left;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

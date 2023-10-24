@@ -9,3 +9,6 @@ ul, li {
 * {
     box-sizing: border-box; /* invert padding */
 }
+img {
+    vertical-align: top; /* removes white space below image */
+}

@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('../fonts/SoDoSans-Bold.eot');
+    src: local('SoDo Sans Bold'), local('SoDoSans-Bold'),
+        url('../fonts/SoDoSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SoDoSans-Bold.woff2') format('woff2'),
+        url('../fonts/SoDoSans-Bold.woff') format('woff'),
+        url('../fonts/SoDoSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SoDo Sans';
+    src: url('../fonts/SoDoSans-Regular.eot');
+    src: local('SoDo Sans Regular'), local('SoDoSans-Regular'),
+        url('../fonts/SoDoSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SoDoSans-Regular.woff2') format('woff2'),
+        url('../fonts/SoDoSans-Regular.woff') format('woff'),
+        url('../fonts/SoDoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
