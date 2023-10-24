@@ -3,24 +3,23 @@
 .overlay {
     background-color: vars.$color_green;
     width: 100vw;
-    height: 100vh; /* v is for viewport */
-    position: fixed; /* fixed to the top edge of the browser */
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: -100vw;
     z-index: 1000;
-    transition-property: all; /* this is where the slider comes in - not in java */
-    transition-duration: .5s; 
-    display: flex; /* display: flex makes items sit side by side instead of vertical */
-    flex-direction: column; 
-    justify-content: center; /* moves children to center of flex area */
-    padding: 2rem; 
-    align-items: center; 
-
+    transition-property: all;
+    transition-duration: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
     .logo {
         width: 8rem;
-        height: auto; /* auto makes aspect ratio same for width and height */
+        height: auto;
         margin-bottom: 2rem;
-        position: relative; 
+        position: relative;
         left: -1rem;
         opacity: 0;
         transition-property: all;
@@ -28,31 +27,25 @@
         transition-duration: .5s;
     }
 }
-
-/* compound selector */
 .overlay.active {
     left: 0;
 }
- 
- .overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
+
+.overlay.active .nav--mobile ul li {
     /* background-color: red; */
-     opacity: 1;
-     left: 0;
- }
- 
- .overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
-     transition-delay: .5s; 
- }
- 
- .overlay.active .mobile-nav ul li:nth-child(2) { 
-     transition-delay: .6s;
- }
- 
- .overlay.active .mobile-nav ul li:nth-child(3) { 
-     transition-delay: .7s; 
- }
- 
- .overlay.active .logo {
+    opacity: 1;
+    left: 0;
+}
+.overlay.active .nav--mobile ul li:nth-child(1) {
+    transition-delay: .5s;
+}
+.overlay.active .nav--mobile ul li:nth-child(2) {
+    transition-delay: .6s;
+}
+.overlay.active .nav--mobile ul li:nth-child(3) {
+    transition-delay: .7s;
+}
+.overlay.active .logo {
     left: 0;
     opacity: 1;
 }

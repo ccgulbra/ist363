@@ -16,17 +16,18 @@
     }
     &.btn-ui--menu {
         @include mixins.breakpoint(laptop) {
-            display: none; 
+            display: none;
         }
     }
     &.btn-ui--close {
         position: absolute;
-        top: 1rem; 
+        top: 1rem;
         right: 1rem;
-        background-color: transparent; 
+        background-color: transparent;
         border: 1px solid white;
         svg {
             fill: white;
         }
     }
+    
 }

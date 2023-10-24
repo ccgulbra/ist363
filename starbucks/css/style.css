@@ -346,6 +346,45 @@ img {
   vertical-align: top; /* removes white space below image */
 }
 
+.btn {
+  font-family: "SoDo Sans", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+.btn.btn--primary {
+  background-color: black;
+  color: white;
+}
+.btn.btn--secondary {
+  background-color: white;
+  color: black;
+}
+.btn.btn--text {
+  border-radius: 0;
+  border: 0;
+}
+.btn.btn--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn.btn--icon svg {
+  width: 1rem;
+  height: auto;
+}
+.btn.btn--icon.btn--icon--left {
+  flex-direction: row-reverse;
+}
+.btn.btn--icon.btn--icon--right {
+  flex-direction: row;
+}
+
 .btn-ui {
   background-color: white;
   border: 0;
@@ -376,49 +415,50 @@ img {
   fill: white;
 }
 
-.btn {
-  font-family: "SoDo Sans", Arial, sans-serif;
-  font-size: 1rem;
+.collection {
+  margin-top: 2rem;
+}
+.collection__title {
+  font-size: 1.5rem;
   font-weight: bold;
   color: black;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  display: block;
-  border-radius: 100px;
-  border: 1px solid black;
+  font-family: "SoDo Sans", Arial, sans-serif;
 }
-.btn.btn--primary {
-  background-color: black;
-  color: white;
+.collection__grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
-.btn.btn--secondary {
-  background-color: white;
-  color: black;
+@media (min-width: 700px) {
+  .collection__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-.btn.btn--text {
-  border-radius: 0;
-  border: 0;
+@media (min-width: 980px) {
+  .collection__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-.btn.btn-icon--left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.collection__item {
+  margin-bottom: 1rem;
 }
-.btn.btn-icon--left svg {
-  width: 1rem;
+.collection__item__image {
+  width: 100%;
   height: auto;
+  margin-bottom: 0.5rem;
 }
-.btn.btn-icon--left.btn--icon--left {
-  flex-direction: row-reverse;
-}
-.btn.btn-icon--left.btn--icon--right {
-  flex-direction: row;
+.collection__item__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: black;
+  font-family: "SoDo Sans", Arial, sans-serif;
 }
 
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 @media (min-width: 700px) {
   .container {
@@ -465,46 +505,6 @@ img {
   color: black;
 }
 
-.collection {
-  margin-top: 2rem;
-}
-.collection__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-  font-family: "SoDo Sans", Arial, sans-serif;
-}
-.collection__grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-@media (min-width: 700px) {
-  .collection__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 980px) {
-  .collection__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.collection__item {
-  margin-bottom: 1rem;
-}
-.collection__item__image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-.collection__item__title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: black;
-  font-family: "SoDo Sans", Arial, sans-serif;
-}
-
 .label {
   display: block;
   font-size: 0.75rem;
@@ -523,7 +523,7 @@ img {
   gap: 1rem;
 }
 .nav__link {
-  font-family: Arial;
+  font-family: "SoDo Sans", Arial, sans-serif;
   font-weight: bold;
   text-decoration: none;
 }
@@ -539,8 +539,55 @@ img {
     display: block;
   }
 }
-.nav.nav--social .nav__link {
+.nav.nav--utility {
+  display: none;
+}
+@media (min-width: 980px) {
+  .nav.nav--utility {
+    display: block;
+  }
+}
+.nav.nav--mobile .nav__list {
+  display: flex;
+  flex-direction: column;
+}
+.nav.nav--mobile .nav__list .nav__link {
   color: white;
+  font-size: 1.75rem;
+}
+.nav.nav--social .nav__list {
+  justify-content: center;
+}
+@media (min-width: 980px) {
+  .nav.nav--social .nav__list {
+    justify-content: flex-start;
+  }
+}
+.nav.nav--social .nav__link {
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+}
+.nav.nav--social .nav__link svg {
+  fill: #006341;
+  width: auto;
+  height: 1.5rem;
+}
+.nav.nav--footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.nav.nav--footer .nav__list {
+  flex-direction: column;
+}
+@media (min-width: 980px) {
+  .nav.nav--footer .nav__list {
+    flex-direction: row;
+  }
 }
 .nav.nav--footer .nav__link {
   color: white;
@@ -549,22 +596,22 @@ img {
 .overlay {
   background-color: #006341;
   width: 100vw;
-  height: 100vh; /* v is for viewport */
-  position: fixed; /* fixed to the top edge of the browser */
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: -100vw;
   z-index: 1000;
-  transition-property: all; /* this is where the slider comes in - not in java */
+  transition-property: all;
   transition-duration: 0.5s;
-  display: flex; /* display: flex makes items sit side by side instead of vertical */
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* moves children to center of flex area */
-  padding: 2rem;
+  justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 .overlay .logo {
   width: 8rem;
-  height: auto; /* auto makes aspect ratio same for width and height */
+  height: auto;
   margin-bottom: 2rem;
   position: relative;
   left: -1rem;
@@ -574,26 +621,25 @@ img {
   transition-duration: 0.5s;
 }
 
-/* compound selector */
 .overlay.active {
   left: 0;
 }
 
-.overlay.active .mobile-nav ul li { /* same rule for all nav items; only transition changes */
+.overlay.active .nav--mobile ul li {
   /* background-color: red; */
   opacity: 1;
   left: 0;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(1) { /* targets # child; "menu" */ /* overlay active makes action happen */
+.overlay.active .nav--mobile ul li:nth-child(1) {
   transition-delay: 0.5s;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(2) {
+.overlay.active .nav--mobile ul li:nth-child(2) {
   transition-delay: 0.6s;
 }
 
-.overlay.active .mobile-nav ul li:nth-child(3) {
+.overlay.active .nav--mobile ul li:nth-child(3) {
   transition-delay: 0.7s;
 }
 
@@ -611,6 +657,11 @@ img {
 }
 .row.align-items-center {
   align-items: center;
+}
+
+.select {
+  width: 6rem;
+  padding: 1rem;
 }
 
 .showcase {
@@ -653,11 +704,6 @@ img {
 .showcase__description {
   font-size: 1.25rem;
   font-family: "SoDo Sans", Arial, sans-serif;
-}
-
-.select {
-  width: 6rem;
-  padding: 1rem;
 }
 
 header {

@@ -1,16 +1,16 @@
 @use '../abstracts/vars';
 
 .btn {
+    //background-color: violet;
     font-family: vars.$font_primary;
-    font-size: 1rem; 
+    font-size: 1rem;
     font-weight: bold;
     color: black;
-    text-decoration: none; 
+    text-decoration: none;
     padding: .5rem 1rem;
     display: block;
     border-radius: 100px;
     border: 1px solid black;
-
     &.btn--primary {
         background-color: black;
         color: white;
@@ -21,22 +21,21 @@
     }
     &.btn--text {
         border-radius: 0;
-        border: 0;    
+        border: 0;
     }
-    &.btn-icon--left {
-        display: flex; 
+    &.btn--icon {
+        display: flex;
         align-items: center;
-        gap: .5rem; 
+        gap: .5rem;
         svg {
             width: 1rem;
-            height: auto; 
+            height: auto;
         }
         &.btn--icon--left {
-            flex-direction: row-reverse; 
+            flex-direction: row-reverse;
         }
         &.btn--icon--right {
             flex-direction: row;
         }
     }
-
 }
